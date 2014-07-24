@@ -1,0 +1,510 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "idCabinetReportController",
+        "designer|userClassName": "report.CabinetReportController"
+    },
+    "designerId": "cdca430c-8dd5-45d6-ba3e-fe3a97946505",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initCabinetReportGrid",
+                "implHandler": [
+                    "alert(\"initCabinetReportGrid\");"
+                ]
+            },
+            "designerId": "388f3bb1-85bb-4363-a0d8-528a37825a4c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "runCabinetReport",
+                "implHandler": [
+                    "alert(\"initCAbinetReportGrid\");"
+                ]
+            },
+            "designerId": "fa57d72b-57d9-46a9-8291-6fb9351fd589"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "\r",
+                    "console.log('Constroller init begins!!!');\r",
+                    "\r",
+                    "var me = this;\r",
+                    "\r",
+                    "me.listen(\r",
+                    "{\r",
+                    "    controller: { \r",
+                    "        '*': {\r",
+                    "            initCabinetReportController: me.initCabinetReportController,\r",
+                    "            runCabinetReport: me.runCabinetReport\r",
+                    "        }\r",
+                    "    }, \r",
+                    "    component: {\r",
+                    "        '#idRunReportButton': {\r",
+                    "            onIdRunReportClick: me.onIdRunReportClick\r",
+                    "        },\r",
+                    "        '#idCabinetFilterPanel': {\r",
+                    "            afterrender: me.onCabinetReportGridAfterRender\r",
+                    "        },\r",
+                    "        '#idCabinetReportPanel': {\r",
+                    "            afterrender: me.onCabinetReportPanelAfterRender\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "c7770569-b195-4993-8694-57c0dc2f384a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "constructor",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "me.callParent(arguments);\r",
+                    "me.init(config);\r",
+                    "\r",
+                    "console.log('Controller constructs ending!!!');"
+                ]
+            },
+            "designerId": "db933a12-c805-4abe-9922-8d7a004b0624"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCabinetReportPanelAfterRender",
+                "implHandler": [
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "e8cb09d9-c812-473d-868e-7d5691df1638"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getDefaultGridData",
+                "implHandler": [
+                    "\r",
+                    "//It should be a server call function. \r",
+                    "/*\r",
+                    "var gridData = {'items':[\r",
+                    "{'itemId':'15', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC129'},\r",
+                    "{'itemId':'1707', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC132'},\r",
+                    "{'itemId':'16', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC146'},\r",
+                    "{'itemId':'372', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC150'},\r",
+                    "{'itemId':'17', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD129'},\r",
+                    "{'itemId':'1708', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD132'},\r",
+                    "{'itemId':'18', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD146'},\r",
+                    "{'itemId':'373', 'location':'NAPNCR','itemClass':'Cabinet','status':'Planned','modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD150'}\r",
+                    "]};\r",
+                    "*/\r",
+                    "var gridData = [\r",
+                    "{'itemId':'15', 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC129', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'1707'  , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC132', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'16'    , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC146', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'372'   , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BC150', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'17'    , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD129', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'1708'  , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD132', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'18'    , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD146', 'rowLabel':'1','grouping':'Storage'},\r",
+                    "{'itemId':'373'   , 'location':'NAPNCR' , 'itemClass':'Cabinet' , 'status':'Planned' , 'modelName':'Rack (24W x 42D) 44U','cabinetName':'B1BD150', 'rowLabel':'1','grouping':'Storage'}\r",
+                    "];\r",
+                    "\r",
+                    "return gridData;"
+                ]
+            },
+            "designerId": "d985451e-8864-4033-b9bb-ca686cf0651a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCabinetReportStore",
+                "designer|params": [
+                    "gridData"
+                ],
+                "implHandler": [
+                    "\r",
+                    "var store = Ext.create('Ext.data.Store', {\r",
+                    "    fields: ['itemId','location','itemClass','status','modelName', 'cabinetName' ],\r",
+                    "    data: gridData,\r",
+                    "    proxy: {\r",
+                    "        type: 'memory',\r",
+                    "        reader: {\r",
+                    "            type: 'json',\r",
+                    "            root: 'items'\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "return store;"
+                ]
+            },
+            "designerId": "cfab15b0-07d1-44c2-a75d-bd18db850f45"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getLocationData",
+                "implHandler": [
+                    "\r",
+                    "var locationData = [\r",
+                    "[ 'Site A' ,'Site A'],\r",
+                    "[ 'Site B' ,'Site B'],\r",
+                    "[ 'Site C' ,'Site C']\r",
+                    "];\r",
+                    "\r",
+                    "return locationData;"
+                ]
+            },
+            "designerId": "3e9dd745-567d-44ef-bb24-c7ebce5362cd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createCabinetReportItemListPanel",
+                "implHandler": [
+                    "\r",
+                    "//Test data\r",
+                    "var gridData = this.getDefaultData();\r",
+                    "\r",
+                    "var store = this.getCabinetReportStore(gridData);\r",
+                    "\r",
+                    "var filterRow = Ext.create('Ext.ux.grid.FilterRow');\r",
+                    "\r",
+                    "var gridPanel = Ext.create('Ext.grid.Panel', {\r",
+                    "    store: store,\r",
+                    "    stateful: true,\r",
+                    "    stateId: 'stateGrid',\r",
+                    "    plugins : [filterRow],\r",
+                    "    columns: [\r",
+                    "    {\r",
+                    "        text     : 'Cabinet Name',\r",
+                    "        width    : 0,\r",
+                    "        flex     : 1,\r",
+                    "        sortable : true,\r",
+                    "        dataIndex: 'itemId',\r",
+                    "        filterElement: new Ext.form.TextField()\r",
+                    "    },    \r",
+                    "    {\r",
+                    "        text     : 'Location',\r",
+                    "        width    : 85,\r",
+                    "        sortable : true,                \r",
+                    "        dataIndex: 'location',\r",
+                    "        filterElement : new Ext.form.ComboBox({                              \r",
+                    "            displayField    : 'name',\r",
+                    "            valueField      : 'state',\r",
+                    "            triggerAction   : 'all',                \r",
+                    "            typeAhead               : false,                                \r",
+                    "            mode                    : 'local',\r",
+                    "            listWidth               : 160,\r",
+                    "            hideTrigger             : false,\r",
+                    "            emptyText               : 'Select',\r",
+                    "            //store                   :[[null, 'All'],['Site A','Site A'],['Site B','Site B']],\r",
+                    "            store                   : locationStore,\r",
+                    "            listConfig: {\r",
+                    "                getInnerTpl: function() {\r",
+                    "                    //return '<div data-qtip=\"{name}. {slogan}\">{name} ({name})</div>';\r",
+                    "                    return '<div data-qtip=\"{locationName}. {locationCode}\"><input type=\"checkbox\">{locationName}</div>';\r",
+                    "                }\r",
+                    "            }\r",
+                    "        }),\r",
+                    "    },\r",
+                    "    {\r",
+                    "        text     : 'Class',\r",
+                    "        width    : 85,\r",
+                    "        sortable : true,                \r",
+                    "        dataIndex: 'itemClass',\r",
+                    "        renderer : function(value, meta, record) {\r",
+                    "            //return value ? 'Published' : 'Unpublished' ;\r",
+                    "            return value ;\r",
+                    "        },\r",
+                    "        filterElement : new Ext.form.ComboBox({                              \r",
+                    "            displayField    : 'name',\r",
+                    "            valueField      : 'state',\r",
+                    "            triggerAction   : 'all',                \r",
+                    "            typeAhead               : false,                                \r",
+                    "            mode                    : 'local',\r",
+                    "            listWidth               : 160,\r",
+                    "            hideTrigger             : false,\r",
+                    "            emptyText               : 'Select',\r",
+                    "            store                   :[[null, 'All'],['Device','Device'],['Cabinet','Cabinet'],['CRAC','CRAC']]\r",
+                    "        })\r",
+                    "    },\r",
+                    "\r",
+                    "    {\r",
+                    "        text     : 'Status',\r",
+                    "        width    : 85,\r",
+                    "        sortable : true,                \r",
+                    "        dataIndex: 'status',\r",
+                    "        renderer : function(value, meta, record) {\r",
+                    "            //return value ? 'Published' : 'Unpublished' ;\r",
+                    "            return value ;\r",
+                    "        },\r",
+                    "        filterElement : new Ext.form.ComboBox({                              \r",
+                    "            displayField    : 'name',\r",
+                    "            valueField      : 'state',\r",
+                    "            triggerAction   : 'all',                \r",
+                    "            typeAhead               : false,                                \r",
+                    "            mode                    : 'local',\r",
+                    "            listWidth               : 160,\r",
+                    "            hideTrigger             : false,\r",
+                    "            emptyText               : 'Select',\r",
+                    "            store                   :[[null, 'All'],['Planned','Planned'],['Installed','Installed'],['Archieved','Archieved']]\r",
+                    "        })\r",
+                    "    },\r",
+                    "\r",
+                    "    {\r",
+                    "        text     : 'Name',\r",
+                    "        flex     : 1,\r",
+                    "        sortable : true,\r",
+                    "        dataIndex: 'modelName',\r",
+                    "        filterElement: new Ext.form.TextField()\r",
+                    "    },\r",
+                    "    {\r",
+                    "        text     : 'Cabinet Name',\r",
+                    "        flex     : 1,\r",
+                    "        sortable : true,\r",
+                    "        dataIndex: 'cabinetName',\r",
+                    "        filterElement: new Ext.form.TextField()\r",
+                    "    }            \r",
+                    "\r",
+                    "\r",
+                    "    ],\r",
+                    "    height: 400,\r",
+                    "    width: 600,\r",
+                    "    title: 'Filter row Sample Grid demo',\r",
+                    "    renderTo: 'grid-example',\r",
+                    "    viewConfig: {\r",
+                    "        stripeRows: true\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "return gridPanel;"
+                ]
+            },
+            "designerId": "7ebd700e-2c1e-422c-810d-ac2d45d10e70"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCabinetReportGridAfterRender",
+                "implHandler": [
+                    "console.log(\"onCabinetReportGridAfterRender ======================================= begin\");\r",
+                    "\r",
+                    "var me = this;\r",
+                    "\r",
+                    "//Get the cabinet filter grid\r",
+                    "var cabinetFilterPanel = me.getCabinetFilterGrid();\r",
+                    "\r",
+                    "\r",
+                    "var gridColumns = me.getCabinetReportGridColumns();\r",
+                    "\r",
+                    "\r",
+                    "//@TODO get data from server\r",
+                    "var gridData = me.getDefaultGridData();\r",
+                    "\r",
+                    "\r",
+                    "console.log(\"gridData=\\n\"+gridData.length);\r",
+                    "\r",
+                    "//var cabinetReportStore = me.getCabinetReportStore(gridData);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//cabinetFilterPanel.store = cabinetReportStore;\r",
+                    "//cabinetFilterPanel.store.loadData(gridData,true);\r",
+                    "//cabinetFilterPanel.store.add(cabinetReportStore);\r",
+                    "\r",
+                    "cabinetFilterPanel.store.loadData(gridData);\r",
+                    "cabinetFilterPanel.reconfigure(cabinetFilterPanel.store, gridColumns);\r",
+                    "//cabinetFilterPanel.doLayout();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//var locationData = this.getLocationData();\r",
+                    "\r",
+                    "/*\r",
+                    "var locationStore = Ext.create('Ext.data.ArrayStore', {\r",
+                    "fields: [\r",
+                    "{type: 'string', name: 'locationName'},\r",
+                    "{type: 'string', name: 'locationCode'}\r",
+                    "],\r",
+                    "data: locationData\r",
+                    "});\r",
+                    "*/\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//var grid = this.createCabinetReportItemListPanel();\r",
+                    "\r",
+                    "//var filterRow = Ext.create('Ext.ux.grid.FilterRow');\r",
+                    "//cabinetFilterPanel.plugins = [filterRow];\r",
+                    "\r",
+                    "///console.log(\"====================================================================\"+idCabinetFilterPanel);   \r",
+                    "\r",
+                    "\r",
+                    "console.log(\"onCabinetReportGridAfterRender ======================================= end\");"
+                ]
+            },
+            "designerId": "24b81cc4-35a4-4cbc-b4e5-db8c48b3eb1a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "cabinetFilterGrid",
+                "selector": "#idCabinetFilterPanel",
+                "xtype": null
+            },
+            "designerId": "123c6889-9e75-4bde-85a6-c06f4c4dd2bc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCabinetReportGridColumns",
+                "implHandler": [
+                    "\r",
+                    "var gridColumns = [\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    maxWidth: 0,    \r",
+                    "    dataIndex: 'itemId',\r",
+                    "    text: ''\r",
+                    "\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'location',\r",
+                    "    text: 'Location',\r",
+                    "    width:150\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'itemClass',\r",
+                    "    maxWidth: 0,    \r",
+                    "    text: 'Class'\r",
+                    "\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'status',\r",
+                    "    maxWidth: 0,    \r",
+                    "    text: 'Status'\r",
+                    "\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'modelName',\r",
+                    "    maxWidth: 0,    \r",
+                    "    text: 'Name'\r",
+                    "\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'cabinetName',\r",
+                    "    text: 'Cabinet Name',\r",
+                    "    width: 150\r",
+                    "\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'rowLabel',\r",
+                    "    text: 'Row Label',\r",
+                    "    width: 150\r",
+                    "},\r",
+                    "{\r",
+                    "    xtype: 'gridcolumn',\r",
+                    "    dataIndex: 'grouping',\r",
+                    "    text: 'Grouping',\r",
+                    "    width: 150\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "];\r",
+                    "\r",
+                    "return gridColumns;"
+                ]
+            },
+            "designerId": "127d01a4-82d9-4801-9510-aa0bcf838943"
+        }
+    ]
+}

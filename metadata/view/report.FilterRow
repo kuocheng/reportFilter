@@ -1,0 +1,13 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "report.FilterRow",
+        "designer|userAlias": "filterRow"
+    },
+    "designerId": "3c4d0677-9835-40f7-8aa0-a66ae27bd531"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "/clientHTML/reportFilter/resources/FilterRow.js"
+    },
+    "designerId": "6bcb7af4-cc6b-4fca-b964-1dc3003c5029"
+}

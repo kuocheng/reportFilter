@@ -1,0 +1,462 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 1,
+        "height": null,
+        "itemId": "idCabinetReportPanel",
+        "width": null,
+        "designer|userClassName": "report.CabinetReportPanel",
+        "designer|initialView": true,
+        "autoScroll": true,
+        "layout": "table",
+        "title": ""
+    },
+    "designerId": "4f7ab615-5d9f-431c-8ea8-3d9fae39ee7a",
+    "cn": [
+        {
+            "type": "Ext.form.Label",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|colspan": 1,
+                "layout|rowspan": 1,
+                "dock": "top",
+                "text": "Cabinet Details Report"
+            },
+            "designerId": "b6976d29-f80c-4da8-83c8-697bc20ddd93"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|colspan": 1,
+                "layout|rowspan": 1,
+                "dock": "top"
+            },
+            "designerId": "cf3b5b65-337a-4281-b116-675e3e5b84a9",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "idRunReportButton",
+                        "margin": "10 10 10 10 ",
+                        "padding": "10 10 10 10",
+                        "text": "Run Report"
+                    },
+                    "designerId": "f94bb96f-f5f3-4d7b-9507-33cd97c3bf7c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onIdRunReportClick",
+                                "implHandler": [
+                                    "\tvar me = this;\r",
+                                    "\r",
+                                    "\tme.getController('report.CabinetReportController').fireEvent('initCabinetReportGrid');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "0086009e-6e92-4eae-8cae-41d6b52e600d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "margin": "10 10 10 10",
+                        "padding": "10 10 10 10",
+                        "text": "Save Settings"
+                    },
+                    "designerId": "b0a019e0-934d-47a0-bf16-cf5d94234217"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "margin": "10 10 10 10",
+                        "padding": "10 10 10 10",
+                        "text": "Clear Settings"
+                    },
+                    "designerId": "8852e2b8-57d1-43f8-80be-0113de63f485"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Label",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|colspan": 1,
+                "layout|rowspan": 1,
+                "dock": "top",
+                "padding": "10 10 10 10",
+                "text": "This report provides the details for the selected cabinets......"
+            },
+            "designerId": "fba3d7b3-e302-4533-b196-0a8c1f029fb3"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "idReportSettingsPanel",
+                "layout": "fit",
+                "frameHeader": false,
+                "title": "Cabinet Filter"
+            },
+            "designerId": "5277320e-1f63-4df2-ae6c-f10297bad916",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "idSelectAllCheckbox",
+                        "fieldLabel": "",
+                        "labelWidth": 1000,
+                        "boxLabel": "Select All",
+                        "boxLabelAlign": "before"
+                    },
+                    "designerId": "c96348a8-c624-4adb-aa8c-b76545faaaa2"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 300,
+                        "itemId": "idCabinetFilterPanel",
+                        "padding": "10 10 10 10",
+                        "designer|displayName": "itemClass",
+                        "header": false,
+                        "title": "Cabinet report",
+                        "store": "report.CabinetReportItem"
+                    },
+                    "designerId": "7b201eb9-3870-4b95-8214-e8035fa8ff49",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "maxWidth": 0,
+                                "defaultWidth": 0,
+                                "dataIndex": "itemId",
+                                "text": ""
+                            },
+                            "designerId": "c0a88327-5e0d-4b8c-8809-ed282b8069f2"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onIdCabinetFilterPanelAfterRender",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "8ffbf35f-3f4d-47c9-a868-30a26c768491"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "minHeight": null,
+                                "designer|displayName": "location",
+                                "dataIndex": "location",
+                                "text": "Location"
+                            },
+                            "designerId": "7d64c53a-4aa5-4f73-89b4-ab0b3a483a8d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemClass",
+                                "dataIndex": "itemClass",
+                                "text": "Class"
+                            },
+                            "designerId": "5fe4e4ef-7001-4e3b-b13f-293c84d62eb4"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemStatus",
+                                "dataIndex": "status",
+                                "text": "Status"
+                            },
+                            "designerId": "23cde9f8-477d-48ea-b6cc-a39e69c5175b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "modelName",
+                                "dataIndex": "modelName",
+                                "text": "Name"
+                            },
+                            "designerId": "6bf08739-da22-448b-b33e-024a9264ca8a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "cabinetName",
+                                "dataIndex": "cabinetName",
+                                "text": "Cabinet Name"
+                            },
+                            "designerId": "7506e837-b16f-47f7-a02d-a4cf603df082"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "rowLabel",
+                                "dataIndex": "rowLabel",
+                                "text": "Row Label"
+                            },
+                            "designerId": "5d634446-7640-4c5e-9f1a-d3fa6c05142c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "grouping",
+                                "dataIndex": "grouping",
+                                "text": "Grouping"
+                            },
+                            "designerId": "4d976ef5-b1dc-4dbd-81eb-d8c700312308"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "console.log(\"Panel after render on CabinetReportPanel\");\r",
+                    "\r",
+                    "//alert(\"test launch!\");\r",
+                    "//init controller\r",
+                    "var me = this;\r",
+                    "\r",
+                    "//me.getContr.fireEvent('initCabinetReportGrid');\r",
+                    "//me.getController('report.CabinetReportController').initCabinetReportGrid();\r",
+                    "//MyApp.getController('report.CabinetReportController').initCabinetReportGrid();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "b1a33c99-ccee-40f5-9f5e-32d4ebb88667"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|colspan": 1,
+                "layout|rowspan": 1,
+                "dock": "top",
+                "container|columns": 2,
+                "itemId": "idCabinetViewPanel",
+                "padding": "10 10 10 10",
+                "layout": "table",
+                "title": "Cabinet View"
+            },
+            "designerId": "5233fbb7-7ee1-4c1f-811e-2bb608eab778",
+            "cn": [
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|colspan": 2,
+                        "layout|rowspan": 3,
+                        "container|columns": 3,
+                        "itemId": "idCabinetViewRadioGroup",
+                        "width": 400,
+                        "layout": "table",
+                        "fieldLabel": ""
+                    },
+                    "designerId": "6044bc35-eaf0-46b9-98cb-2172bf5d7447",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 1,
+                                "layout|rowspan": 1,
+                                "fieldLabel": null,
+                                "boxLabel": "Front"
+                            },
+                            "designerId": "4528513f-8d43-4c30-8d1f-4775a7f24e8b"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 1,
+                                "layout|rowspan": 1,
+                                "minWidth": 100,
+                                "fieldLabel": null,
+                                "boxLabel": "Front Image"
+                            },
+                            "designerId": "43ddd577-cecb-4571-a9aa-7f1f35fcd05f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "boxLabel": "Text"
+                            },
+                            "designerId": "b0048e06-87fc-488b-9239-e0a862a85e1c"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 1,
+                                "layout|rowspan": 2,
+                                "fieldLabel": null,
+                                "boxLabel": "Back"
+                            },
+                            "designerId": "e125d882-8abd-4256-a519-822abdade84a"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 1,
+                                "layout|rowspan": 1,
+                                "fieldLabel": null,
+                                "boxLabel": "Image"
+                            },
+                            "designerId": "63b5d91c-1c09-40e5-b577-053a4227dcc3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

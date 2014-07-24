@@ -1,0 +1,86 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "report.CabinetReportItemModel"
+    },
+    "designerId": "20fa2cf8-25a7-40a3-a13b-d740eee54313",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "itemId"
+            },
+            "designerId": "064b338d-b503-4ba8-9591-6e6d933d15d9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "location"
+            },
+            "designerId": "ff4836a1-3968-4df4-beaa-186cf936d7bf"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "itemClass"
+            },
+            "designerId": "9785dcd7-f481-4371-943f-295a022b1015"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "status"
+            },
+            "designerId": "abd89e12-bfe9-4fd5-ba30-f3a50e84040f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modelName"
+            },
+            "designerId": "1840c5ec-5cd4-4e4b-a6af-2c4129d44d25"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cabinetName"
+            },
+            "designerId": "b42bc045-f273-4809-a89e-670a06013083"
+        }
+    ]
+}

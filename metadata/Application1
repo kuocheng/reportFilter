@@ -1,0 +1,42 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "MyModel"
+        ],
+        "stores": [
+            "report.CabinetReportStore"
+        ],
+        "views": [
+            "report.CabinetReportPanel"
+        ],
+        "autoCreateViewport": true,
+        "controllers": [
+            "report.CabinetReportController"
+        ],
+        "name": "MyApp"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "\t"
+                ]
+            },
+            "designerId": "173f0159-0348-4601-9e1e-4ca77c9cc9ca"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "name": "reportFilter",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://localhost:8080/clientHTML/reportFilter/",
+        "exportPath": "D:/apache/tomcat-7.0.54/webapps/clientHTML/reportFilter",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1044,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "4f7ab615-5d9f-431c-8ea8-3d9fae39ee7a": {
+            "paths": [
+                "metadata/view/report.CabinetReportPanel",
+                "app/view/override/report/CabinetReportPanel.js",
+                "app/view/report/CabinetReportPanel.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "report.CabinetReportPanel"
+        },
+        "e6186da3-f737-4d26-a9fc-181696b61196": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "6bcb7af4-cc6b-4fca-b964-1dc3003c5029": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "cdca430c-8dd5-45d6-ba3e-fe3a97946505": {
+            "paths": [
+                "metadata/controller/report.CabinetReportController",
+                "app/controller/override/report/CabinetReportController.js",
+                "app/controller/report/CabinetReportController.js"
+            ],
+            "className": "report.CabinetReportController"
+        },
+        "2c9da297-96fc-435e-b1db-d608bef14e84": {
+            "paths": [
+                "metadata/store/report.CabinetReportItem",
+                "app/store/override/report/CabinetReportItem.js",
+                "app/store/report/CabinetReportItem.js"
+            ],
+            "className": "report.CabinetReportItem"
+        },
+        "20fa2cf8-25a7-40a3-a13b-d740eee54313": {
+            "paths": [
+                "metadata/model/report.CabinetReportItemModel",
+                "app/model/override/report/CabinetReportItemModel.js",
+                "app/model/report/CabinetReportItemModel.js"
+            ],
+            "className": "report.CabinetReportItemModel"
+        },
+        "3c4d0677-9835-40f7-8aa0-a66ae27bd531": {
+            "paths": [
+                "metadata/view/report.FilterRow",
+                "app/view/override/report/FilterRow.js",
+                "app/view/report/FilterRow.js"
+            ],
+            "className": "report.FilterRow"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "4f7ab615-5d9f-431c-8ea8-3d9fae39ee7a",
+            "3c4d0677-9835-40f7-8aa0-a66ae27bd531"
+        ],
+        "store": [
+            "2c9da297-96fc-435e-b1db-d608bef14e84"
+        ],
+        "controller": [
+            "cdca430c-8dd5-45d6-ba3e-fe3a97946505"
+        ],
+        "model": [
+            "20fa2cf8-25a7-40a3-a13b-d740eee54313"
+        ],
+        "resource": [
+            "e6186da3-f737-4d26-a9fc-181696b61196",
+            "6bcb7af4-cc6b-4fca-b964-1dc3003c5029"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

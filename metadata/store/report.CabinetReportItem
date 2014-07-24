@@ -1,0 +1,39 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "report.CabinetReportItemModel",
+        "storeId": "cabinetReportStore",
+        "designer|userClassName": "report.CabinetReportItem"
+    },
+    "designerId": "2c9da297-96fc-435e-b1db-d608bef14e84",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "051afa0c-9b30-46cd-a1fa-ab0df1d1c069",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "items"
+                    },
+                    "designerId": "773dee11-1d7b-4014-96af-3919d7dfee48"
+                }
+            ]
+        }
+    ]
+}
