@@ -34,9 +34,21 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "runCabinetReport",
+                "fn": "runCabinetDetailReport",
                 "implHandler": [
-                    "alert(\"initCAbinetReportGrid\");"
+                    "//alert(\"initCAbinetReportGrid\");\r",
+                    "\r",
+                    "window.open('report/cabinetDetailReport.html', '_blank', 'fullscreen=yes')\r",
+                    "\r",
+                    "/*\r",
+                    "var win = new Ext.Window({\r",
+                    "\ttitle:'Cabinet Detail Report',                \r",
+                    "\tplain       : true,\r",
+                    "\thtml       : 'Cabinet Detail Report'\r",
+                    "});\r",
+                    "\r",
+                    "win.show();\r",
+                    "*/"
                 ]
             },
             "designerId": "fa57d72b-57d9-46a9-8291-6fb9351fd589"
@@ -69,7 +81,7 @@
                     "    }, \r",
                     "    component: {\r",
                     "        '#idRunReportButton': {\r",
-                    "            onIdRunReportClick: me.onIdRunReportClick\r",
+                    "            click: me.runCabinetDetailReport\r",
                     "        },\r",
                     "        '#idCabinetFilterPanel': {\r",
                     "            afterrender: me.onCabinetReportGridAfterRender\r",
@@ -99,7 +111,7 @@
                     "var me = this;\r",
                     "\r",
                     "me.callParent(arguments);\r",
-                    "me.init(config);\r",
+                    "//me.init(config);\r",
                     "\r",
                     "console.log('Controller constructs ending!!!');"
                 ]

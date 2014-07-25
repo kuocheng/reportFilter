@@ -29,8 +29,20 @@ Ext.define('MyApp.controller.report.CabinetReportController', {
         alert("initCabinetReportGrid");
     },
 
-    runCabinetReport: function() {
-        alert("initCAbinetReportGrid");
+    runCabinetDetailReport: function() {
+        //alert("initCAbinetReportGrid");
+
+        window.open('report/cabinetDetailReport.html', '_blank', 'fullscreen=yes')
+
+        /*
+        var win = new Ext.Window({
+        title:'Cabinet Detail Report',                
+        plain       : true,
+        html       : 'Cabinet Detail Report'
+        });
+
+        win.show();
+        */
     },
 
     init: function(application) {
@@ -49,7 +61,7 @@ Ext.define('MyApp.controller.report.CabinetReportController', {
             }, 
             component: {
                 '#idRunReportButton': {
-                    onIdRunReportClick: me.onIdRunReportClick
+                    click: me.runCabinetDetailReport
                 },
                 '#idCabinetFilterPanel': {
                     afterrender: me.onCabinetReportGridAfterRender
@@ -65,7 +77,7 @@ Ext.define('MyApp.controller.report.CabinetReportController', {
         var me = this;
 
         me.callParent(arguments);
-        me.init(config);
+        //me.init(config);
 
         console.log('Controller constructs ending!!!');
     },

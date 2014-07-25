@@ -229,7 +229,7 @@ Ext.define('MyApp.view.report.CabinetReportPanel', {
     onIdRunReportClick: function(button, e, eOpts) {
         var me = this;
 
-        me.getController('report.CabinetReportController').fireEvent('initCabinetReportGrid');
+        //me.getController('report.CabinetReportController').fireEvent('initCabinetReportGrid');
     },
 
     onIdCabinetFilterPanelAfterRender: function(component, eOpts) {

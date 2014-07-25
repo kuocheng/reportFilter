@@ -73,9 +73,9 @@
                             "userConfig": {
                                 "fn": "onIdRunReportClick",
                                 "implHandler": [
-                                    "\tvar me = this;\r",
+                                    "var me = this;\r",
                                     "\r",
-                                    "\tme.getController('report.CabinetReportController').fireEvent('initCabinetReportGrid');"
+                                    "//me.getController('report.CabinetReportController').fireEvent('initCabinetReportGrid');"
                                 ],
                                 "name": "click",
                                 "scope": "me"
